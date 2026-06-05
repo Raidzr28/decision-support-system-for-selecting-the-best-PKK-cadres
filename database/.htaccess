@@ -1,0 +1,4 @@
+# Lindungi file sensitif dari akses langsung via browser
+<FilesMatch "\.(sql)$">
+  Require all denied
+</FilesMatch>

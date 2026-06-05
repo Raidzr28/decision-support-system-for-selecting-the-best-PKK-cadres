@@ -1,0 +1,88 @@
+/* ====================================================================
+   PRINT STYLES — Kop Surat Resmi
+   ==================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Tinos:wght@400;700&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Tinos', 'Times New Roman', serif;
+  color: #111;
+  background: #f0f0f0;
+  padding: 30px;
+  font-size: 12pt;
+}
+
+.paper {
+  width: 21cm;
+  min-height: 29.7cm;
+  background: #fff;
+  margin: 0 auto;
+  padding: 1.6cm 2cm;
+  box-shadow: 0 6px 30px rgba(0,0,0,.15);
+}
+
+/* ---------- KOP SURAT ---------- */
+.kop {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  border-bottom: 4px double #111;
+  padding-bottom: 12px;
+  margin-bottom: 6px;
+}
+.kop .logo {
+  width: 90px; height: 90px; flex-shrink: 0;
+}
+.kop .logo svg,
+.kop .logo img { width: 100%; height: 100%; object-fit: contain; }
+.kop .teks { flex: 1; text-align: center; }
+.kop .teks h1 { font-size: 18pt; font-weight: 700; letter-spacing: .5px; line-height: 1.2; }
+.kop .teks h2 { font-size: 15pt; font-weight: 700; line-height: 1.2; }
+.kop .teks p { font-size: 10.5pt; margin-top: 3px; }
+.kop .teks .web { font-size: 10pt; font-style: italic; }
+
+.doc-title { text-align: center; margin: 22px 0 6px; }
+.doc-title h3 { font-size: 14pt; font-weight: 700; text-decoration: underline; text-transform: uppercase; }
+.doc-title p { font-size: 11pt; margin-top: 3px; }
+
+.meta { font-size: 11pt; margin: 18px 0 14px; }
+.meta table td { padding: 2px 0; }
+.meta table td:first-child { width: 160px; }
+
+table.report {
+  width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 11pt;
+}
+table.report th, table.report td { border: 1px solid #333; padding: 7px 9px; }
+table.report th { background: #ececec; text-align: center; font-weight: 700; }
+table.report td.center { text-align: center; }
+table.report tr.best td { background: #fff4cc; font-weight: 700; }
+
+.summary-box { border: 1px solid #333; padding: 14px 18px; margin: 18px 0; background: #fafafa; }
+.summary-box b { font-size: 12pt; }
+
+.ttd { margin-top: 50px; display: flex; justify-content: flex-end; }
+.ttd .blk { text-align: center; width: 7cm; }
+.ttd .blk .sp { height: 70px; }
+.ttd .blk .nm { font-weight: 700; text-decoration: underline; }
+
+.note { font-size: 10pt; font-style: italic; color: #444; margin-top: 8px; }
+
+/* ---------- TOOLBAR (tidak ikut cetak) ---------- */
+.print-toolbar {
+  position: fixed; top: 20px; right: 20px; display: flex; gap: 10px; z-index: 99;
+}
+.print-toolbar button, .print-toolbar a {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  padding: 11px 20px; border-radius: 30px; border: none; cursor: pointer;
+  font-weight: 700; font-size: 13px; box-shadow: 0 6px 20px rgba(0,0,0,.18);
+}
+.print-toolbar .pr { background: linear-gradient(135deg,#ff8a56,#ff5e7e); color: #fff; }
+.print-toolbar .bk { background: #fff; color: #555; }
+
+@media print {
+  body { background: #fff; padding: 0; }
+  .paper { box-shadow: none; margin: 0; width: 100%; min-height: auto; padding: 1cm 1.4cm; }
+  .print-toolbar { display: none; }
+  @page { size: A4; margin: 1cm; }
+}

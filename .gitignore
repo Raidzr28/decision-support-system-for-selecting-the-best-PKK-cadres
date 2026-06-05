@@ -1,0 +1,33 @@
+# ============================================================
+# Kredensial & konfigurasi rahasia — JANGAN di-push
+# ============================================================
+config/database.php
+
+# ============================================================
+# File milik tooling (bukan bagian aplikasi)
+# ============================================================
+.claude/
+.idea/
+.vscode/
+*.code-workspace
+
+# ============================================================
+# File sistem operasi
+# ============================================================
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.DS_Store
+
+# ============================================================
+# Log, cache, file sementara & hasil upload
+# ============================================================
+*.log
+*.tmp
+*.cache
+uploads/
+tmp/
+
+# Dependency (jika nanti memakai Composer/NPM)
+/vendor/
+/node_modules/
